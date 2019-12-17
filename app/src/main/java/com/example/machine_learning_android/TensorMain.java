@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,7 +30,7 @@ import java.util.concurrent.Executors;
 public class TensorMain extends AppCompatActivity {
 
     private static final int INPUT_SIZE = 224;
-    private static final int IMAGE_MEAN =117;
+    private static final int IMAGE_MEAN =200;
     private static final float IMAGE_STD = 1;
     private static final String INPUT_NAME ="input";
     private static final String OUTPUT_NAME = "output";
@@ -41,7 +42,7 @@ public class TensorMain extends AppCompatActivity {
     private Classifier classifier;
     private Executor executer = Executors.newSingleThreadExecutor();
     private TextView textViewResult;
-    private Button btnDetectObject, btnToggleCamera;
+    private ImageButton btnDetectObject, btnToggleCamera;
     private ImageView imageViewResult;
     private CameraView cameraView;
 
@@ -50,6 +51,8 @@ public class TensorMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setTitle("Image Detection");
 
         initItems();
 
@@ -110,8 +113,8 @@ public class TensorMain extends AppCompatActivity {
         imageViewResult = (ImageView) findViewById(R.id.imageViewResult);
         textViewResult = (TextView) findViewById(R.id.textViewResult);
 
-        btnToggleCamera = (Button) findViewById(R.id.btnToggleCamera);
-        btnDetectObject = (Button) findViewById(R.id.btnDetectObject);
+        btnToggleCamera = (ImageButton) findViewById(R.id.btnToggleCamera);
+        btnDetectObject = (ImageButton) findViewById(R.id.btnDetectObject);
     }
 
 
