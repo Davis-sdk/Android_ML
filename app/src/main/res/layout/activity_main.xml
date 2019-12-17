@@ -41,6 +41,7 @@
             android:scrollbars="vertical"
             android:gravity="center"
             android:textColor="#000"
+            android:id="@+id/textViewResult"
             />
     </LinearLayout>
 <Button
